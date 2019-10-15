@@ -1,0 +1,14 @@
+<h1>Comments#create</h1>
+<p>Find me in app/views/comments/create.html.erb</p>
+<%= form_with(model: [@image, @comment], local: true) do |f| %>
+  <%= f.text_field :content %>
+  <%= f.submit "コメントする", class: "btn btn-primary" %>
+<% end %>
+
+def show
+  @image = Image.find(params[:id])
+  @comment = @image.comments.build
+end
+
+<% link_to "DELETE", image_comment_path(image_id: @image, id: comment.id), method: :delete %>
+<% end %>

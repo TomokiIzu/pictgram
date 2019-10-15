@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get 'pages/help'
 
   resources :users
+  resouces :coments, only: [:create, :destroy]
 end
